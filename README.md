@@ -11,7 +11,7 @@ s=stone(default) e=empty
 (e)(s)(e)
 ```
 ```
-stone(default) 1
+coblestone(default) 1
 s=stone(rock) e=empty
 (s)(s)(s)
 (s)(s)(s)
