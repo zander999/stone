@@ -30,10 +30,19 @@ minetest.register_craft({
 	}
 })
 minetest.register_craft({
-	output = "default:stone",
+	output = "default:cobble",
 	recipe = {
 		{"stone:stone", "stone:stone","stone:stone"},
 		{"stone:stone", "stone:stone", "stone:stone"},
 		{"stone:stone", "stone:stone", "stone:stone"},
 	}
+})
+minetest.register_abm({
+	nodenames = {"default:dirt_with_grass"},
+	neighbors = {"default:air", "default:air"},
+	interval = 20.0,
+	chance = 100,
+	action = function(pos, node, active_object_count, active_object_count_wider)
+		minetest.set_node({x = pos.x, y = pos.y + 1, z = pos.z}, {name = "stone:stone"})
+	end
 })
